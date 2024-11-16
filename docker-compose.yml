@@ -1,0 +1,6 @@
+services:
+  kafka-demo:
+    image: mvp93/demo-kafka:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
