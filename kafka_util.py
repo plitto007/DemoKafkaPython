@@ -5,7 +5,7 @@ from kafka import KafkaProducer, KafkaConsumer
 from kafka.errors import KafkaError
 
 # ============== KAFKA ====================
-KAFKA_BOOTSTRAP_HOST = os.getenv('KAFKA_STANDALONE_BOOTSTRAP_HOST', 'kafka-standalone-svc')
+KAFKA_BOOTSTRAP_HOST = os.getenv('KAFKA_STANDALONE_BOOTSTRAP_HOST', '192.168.1.42')
 KAFKA_BOOTSTRAP_PORT = os.getenv('KAFKA_STANDALONE_BOOTSTRAP_PORT', '9092')
 KAFKA_BOOTSTRAP_URL = f"{KAFKA_BOOTSTRAP_HOST}:{KAFKA_BOOTSTRAP_PORT}"
 
