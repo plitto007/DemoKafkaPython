@@ -1,6 +1,4 @@
-from kafka_util import KafkaUtil
-
-
+from kafka_consumer import KafkaConsumer
 
 if __name__ == '__main__':
-    KafkaUtil.consume_kafka_topic("first_topic")
+    KafkaConsumer.start_consumer()
