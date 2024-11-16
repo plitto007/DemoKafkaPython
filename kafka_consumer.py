@@ -4,12 +4,13 @@ import os
 KAFKA_BOOTSTRAP_HOST = os.getenv('KAFKA_STANDALONE_BOOTSTRAP_HOST', 'kafka-standalone-svc')
 KAFKA_BOOTSTRAP_PORT = os.getenv('KAFKA_STANDALONE_BOOTSTRAP_PORT', '9092')
 KAFKA_BOOTSTRAP_URL = f"{KAFKA_BOOTSTRAP_HOST}:{KAFKA_BOOTSTRAP_PORT}"
-
+KAFKA_TOPIC = os.getenv('KAFKA_STANDALONE_TOPIC', 'demo_topic')
 
 class KafkaConsumer:
     @staticmethod
     def start_consumer():
         from confluent_kafka import Consumer, KafkaException, KafkaError
+
 
         # Configuration settings for the consumer
         conf = {
@@ -26,7 +27,7 @@ class KafkaConsumer:
             print(f"Consumed message: {message.value().decode('utf-8')}")
 
         # Subscribe to the topic
-        topic = 'first_topic'  # Replace with your Kafka topic name
+        topic = KAFKA_TOPIC  # Replace with your Kafka topic name
         consumer.subscribe([topic])
         try:
             print("Starting consume")
